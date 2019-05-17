@@ -14,6 +14,7 @@ function renderSmurf({name, height, age}, i) {
 }
 
 export default function Village(props) {
+    // useEffect, fetch smurfs, then map it!
     return props.smurfs.map(renderSmurf)
 }
 
