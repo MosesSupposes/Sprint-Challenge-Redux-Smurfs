@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+
 export default function Bedroom(props) {
     const [newVillager, setNewVillager] = useState({
         name: '',
@@ -26,7 +27,7 @@ export default function Bedroom(props) {
                 id="name"
                 type="text" 
                 placeholder="enter smurf name"
-                value={newVillage}
+                value={newVillager}
                 onChange={handleChange}
             />
             <label for="age">Age</label>
@@ -34,7 +35,7 @@ export default function Bedroom(props) {
                 id="age"
                 type="text" 
                 placeholder="enter smurf age"
-                value={newVillage}
+                value={newVillager}
                 onChange={handleChange}
             />
             <label for="height">Height</label>
@@ -42,7 +43,7 @@ export default function Bedroom(props) {
                 id="height"
                 type="text" 
                 placeholder="enter smurf height"
-                value={newVillage}
+                value={newVillager}
                 onChange={handleChange}
             />
         </form>
