@@ -42,18 +42,22 @@ const initialState = {
 
 export default function smurfsReducer(state=initialState, action) {
   switch(action.type) {
+    
     // GET requests
+
     case GATHER_VILLAGE:
       return {
         ...state,
         fetchingSmurfs: true
       }
+
     case GATHER_VILLAGE_SUCCESS: 
       return {
         ...state,
         fetchingSmurfs: false,
         smurfs: state.smurfs.concat(action.payload)
       }
+
     case GATHER_VILLAGE_FAILURE: 
       return {
         ...state,
@@ -62,24 +66,27 @@ export default function smurfsReducer(state=initialState, action) {
       }
 
     // POST requests
+
     case ADD_VILLAGER:
       return {
         ...state,
         addingSmurf: true,
       }
+
     case ADD_VILLAGER_SUCCESS:
       return {
         ...state,
         addingSmurf: false,
         smurfs: state.smurfs.concat(action.payload)
       }
+
     case ADD_VILLAGER_FAILURE:
       return {
         ...state,
         addingSmurf: false,
         error: action.payload
       }
-      
+
     default: 
       return state
   }

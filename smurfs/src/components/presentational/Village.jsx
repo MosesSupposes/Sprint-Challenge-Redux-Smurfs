@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Smurf from './Smurf'
 
 // mapperFn
@@ -13,8 +13,16 @@ function renderSmurf({name, height, age}, i) {
     )
 }
 
+
 export default function Village(props) {
-    // useEffect, fetch smurfs, then map it!
-    return props.smurfs.map(renderSmurf)
+    useEffect(() => {
+        props.gatherVillage()
+    }, [])
+
+    if (props.smurfs.length === 0) {
+        return <h2>Gathering smurf village...</h2>
+    } else {
+        return props.smurfs.map(renderSmurf)
+    }
 }
 
