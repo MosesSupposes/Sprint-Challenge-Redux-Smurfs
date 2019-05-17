@@ -35,6 +35,30 @@ export const gatherVillage = () => dispatch => {
 } 
 
 
+export const addVillager = smurf => dispatch => {
+  dispatch({type: ADD_VILLAGER})
+  fetch("http:///localhost:3333/smurfs", {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(smurf),
+  })
+  .then(res => res.json())
+  .then(smurfs => {
+    dispatch({
+      type: ADD_VILLAGER_SUCCESS,
+      payload: smurfs
+    })
+  })
+  .catch(err => {
+    dispatch({
+      type: ADD_VILLAGER_FAILURE,
+      payload: err
+    })
+  })
+}
+
+
+
 /*
   For this project you'll need at least 2 action creators for the main portion,
    and 2 more for the stretch problem.
