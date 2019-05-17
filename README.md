@@ -32,6 +32,8 @@ In the context of Redux,`actions` are the various actions that a user can perfor
   
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
 
+  Redux thunk is an npm-package, used as a middleware in Redux, that allows us to dispatch asynchronous actions to our store. A thunk is a fancy name for a deffered action, usually in the form of a function returned from another function. This allows us to _defer_ dispatching a normal action by making an API call in the first layer of a higher order function, and then supplying the returned data to a new function we'll return from it (A.K.A. a thunk), that will then be passed along -- via. the redux-thunk middleware -- to our store, carrying our desired action.
+
 ## Project Set Up
 
 Follow these steps to set up your project:
