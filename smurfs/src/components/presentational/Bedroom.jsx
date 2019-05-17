@@ -49,7 +49,7 @@ export default function Bedroom(props) {
                 // value={newVillager.name}
                 value={newVillagerName}
                 onChange={handleChange}
-            />
+                />
             <input 
                 name="age"
                 type="text" 
@@ -57,7 +57,7 @@ export default function Bedroom(props) {
                 // value={newVillager.age}
                 value={newVillagerAge}
                 onChange={handleChange}
-            />
+                />
             <input 
                 name="height"
                 type="text" 
@@ -65,7 +65,8 @@ export default function Bedroom(props) {
                 // value={newVillager.height}
                 value={newVillagerHeight}
                 onChange={handleChange}
-            />
+                />
+            <button role="submit">+</button>
         </form>
     )
 }
