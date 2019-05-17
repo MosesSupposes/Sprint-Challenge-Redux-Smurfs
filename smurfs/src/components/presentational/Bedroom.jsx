@@ -2,11 +2,6 @@ import React, { useState } from 'react'
 
 
 export default function Bedroom(props) {
-    // const [newVillager, setNewVillager] = useState({
-    //     name: '',
-    //     age: '',
-    //     height: ''
-    // })
     const [newVillagerName, setNewVillagerName] = useState('')
     const [newVillagerAge, setNewVillagerAge] = useState('')
     const [newVillagerHeight, setNewVillagerHeight] = useState('')
@@ -23,20 +18,20 @@ export default function Bedroom(props) {
             default: 
                 console.warn('what the Gargamel are you doing bro')
         }
-        // setNewVillager({
-        //     ...newVillager
-        //     [e.target.name] = newVillager[e.target.value]
-        // }) 
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        // props.addVillager(newVillager)
         props.addVillager({
             name: newVillagerName,
             age: newVillagerAge,
             height: newVillagerHeight
         })
+        
+        // reset fields
+        setNewVillagerName('')
+        setNewVillagerAge('')
+        setNewVillagerHeight('')
     }
 
 
@@ -46,7 +41,6 @@ export default function Bedroom(props) {
                 name="name"
                 type="text" 
                 placeholder="enter smurf name"
-                // value={newVillager.name}
                 value={newVillagerName}
                 onChange={handleChange}
                 />
@@ -54,7 +48,6 @@ export default function Bedroom(props) {
                 name="age"
                 type="text" 
                 placeholder="enter smurf age"
-                // value={newVillager.age}
                 value={newVillagerAge}
                 onChange={handleChange}
                 />
@@ -62,7 +55,6 @@ export default function Bedroom(props) {
                 name="height"
                 type="text" 
                 placeholder="enter smurf height"
-                // value={newVillager.height}
                 value={newVillagerHeight}
                 onChange={handleChange}
                 />
