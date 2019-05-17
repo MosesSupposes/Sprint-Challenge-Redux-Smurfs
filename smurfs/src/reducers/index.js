@@ -40,7 +40,7 @@ const initialState = {
   Components can then read your store as, `state` and not `state.fooReducer`.
 */
 
-export default function smurfsReducer(state, action) {
+export default function smurfsReducer(state=initialState, action) {
   switch(action.type) {
     // GET requests
     case GATHER_VILLAGE:
