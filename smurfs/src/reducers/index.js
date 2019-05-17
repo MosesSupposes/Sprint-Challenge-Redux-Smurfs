@@ -79,6 +79,9 @@ export default function smurfsReducer(state=initialState, action) {
         addingSmurf: false,
         error: action.payload
       }
+      
+    default: 
+      return state
   }
 }
 
