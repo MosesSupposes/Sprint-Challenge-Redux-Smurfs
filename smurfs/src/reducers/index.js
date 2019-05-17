@@ -40,3 +40,25 @@ const initialState = {
   Components can then read your store as, `state` and not `state.fooReducer`.
 */
 
+export default function smurfsReducer(state, action) {
+  switch(action.type) {
+    case GATHER_VILLAGE:
+      return {
+        ...state,
+        fetchingSmurfs: true
+      }
+    case GATHER_VILLAGE_SUCCESS: 
+      return {
+        ...state,
+        fetchingSmurfs: false,
+        smurfs: state.smurfs.concat(action.payload)
+      }
+    case GATHER_VILLAGE_FAILURE: 
+      return {
+        ...state,
+        fetchingSmurfs: false,
+        error: action.payload
+      }
+  }
+}
+
